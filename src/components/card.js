@@ -52,7 +52,7 @@ console.log(cardWrapper)
 const cardAppender = (selector) => {
 
   const URL = 'http://localhost:5001/api/articles/'
-  fetch(URL)
+  axios.get(URL)
   .then(res => {
     res.data.articles.javascript.forEach(element => {
       const card = Card(element)
@@ -67,7 +67,7 @@ const cardAppender = (selector) => {
         return document.querySelector(`${selector}`).appendChild(card)
       })
     })
-    fetch(URL)
+    axios.get(URL)
     .then(res => {
       res.data.articles.bootstrap.forEach(element => {
         const card = Card(element)

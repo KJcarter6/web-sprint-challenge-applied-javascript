@@ -1,22 +1,24 @@
 const Header = (title, date, temp) => {
-  const divWrapper = document.createElement("div");
-  divWrapper.classList.add("header");
+  
+  const header = document.createElement('div')
+  const span1 = document.createElement('span')
+  const h1 = document.createElement('h1')
+  const span2 = document.createElement('span')
 
-const span = document.createElement("span");
-span.classList.add("date");
-span.textContent = date;
+  header.classList.add('header')
+  span1.classList.add('date')
+  span2.classList.add('temp')
 
-const h1Title = document.createElement("h1");
-h1Title.textContent = title;
+  header.appendChild(span1)
+  header.appendChild(h1)
+  header.appendChild(span2)
 
-const span2 = document.createElement("span");
-span2.classList.add("temp");
-span2.textContent = temp;
+  span1.textContent = `${date}`
+  span2.textContent = `${temp}`
+  h1.textContent = `${title}`
 
-divWrapper.appendChild(span);
-divWrapper.appendChild(h1Title);
-divWrapper.appendChild(span2);
 
+return header
 
   // TASK 1
   // ---------------------
@@ -30,7 +32,7 @@ divWrapper.appendChild(span2);
   //    <span class="temp">{ temp }</span>
   //  </div>
   //
- return divWrapper;
+ 
 }
 
 const headerAppender = (selector) => {
